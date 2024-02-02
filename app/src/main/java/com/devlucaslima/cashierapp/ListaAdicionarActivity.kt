@@ -44,8 +44,8 @@ class ListaAdicionarActivity : AppCompatActivity() {
             val lucro = fabricaDouble * margemLucroDouble / 100
             val novoPreco = fabricaDouble + lucro
 
-            val lucroString = lucro.toString()
-            val novoPrecoString = novoPreco.toString()
+            val lucroString = lucro.toString().toFloat().toString()
+            val novoPrecoString = novoPreco.toString().toFloat().toString()
 
             val editableNovoPreco: Editable = Editable.Factory.getInstance().newEditable(novoPrecoString)
             txtAddNovoPreco.text = editableNovoPreco
@@ -58,15 +58,15 @@ class ListaAdicionarActivity : AppCompatActivity() {
         val novoPrecoString = txtAddNovoPreco.text.toString()
 
         txtAddNovoPreco.setOnFocusChangeListener { _, hasFocus ->
-            if (!hasFocus && novoPrecoString.isNotEmpty()) {
-                val fabrica = txtAddFabrica.text.toString().toDouble()
-                val novoPreco = txtAddNovoPreco.text.toString().toDouble()
+            if (!hasFocus) {
+                val fabrica = txtAddFabrica.text.toString().toFloat()
+                val novoPreco = txtAddNovoPreco.text.toString().toFloat()
                 val subtracao = novoPreco - fabrica
                 val resultado = 100 * subtracao / fabrica
-                val resultadoDouble = resultado.toString().toDouble()
+                val resultadoFloat = resultado.toString().toFloat()
 
                 txtAddLucro.text = "Lucro: R$ $subtracao"
-                txtAddMargem.text = "Margem: $resultadoDouble%"
+                txtAddMargem.text = "Margem: $resultadoFloat%"
             }
         }
 

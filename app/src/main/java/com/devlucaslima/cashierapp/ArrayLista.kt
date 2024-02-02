@@ -3,7 +3,7 @@ package com.devlucaslima.cashierapp
 class ArrayLista {
     companion object {
         val listaProdutos = arrayListOf(
-            Produto("Exemplo", "1", "0", "0,00", "0,00", "0%")
+            Produto("Produto: Exemplo", "id: 0", "Quantidade: 5", "Preço de fábrica: 1,00", "Novo preço: 2,00", "Lucro: R$1,00")
         )
     }
 }
