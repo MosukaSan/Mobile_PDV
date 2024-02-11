@@ -4,7 +4,7 @@
 - Android 8.0+
 
 # Features added for now ✅
-- Create you project;
+- Create you product;
 - Add products to the system;
 - Calculate Profit Automatically;
 - App settings.
