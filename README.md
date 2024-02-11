@@ -7,7 +7,9 @@
 - Create you product;
 - Add products to the system;
 - Calculate Profit Automatically;
-- App settings.
+
+# App settings ⚙️
+- Change the main menu title
 
 # Made using:
 [![My Skills](https://skillicons.dev/icons?i=androidstudio,kotlin)](https://skillicons.dev)
