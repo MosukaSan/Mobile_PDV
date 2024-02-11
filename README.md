@@ -3,7 +3,7 @@
 - Version alpha (under development)
 - Android 8.0+
 
-# Features ✅
+# Features added for now ✅
 - Create you project;
 - Add products to the system;
 - Calculate Profit Automatically;
