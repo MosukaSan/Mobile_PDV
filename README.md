@@ -1,4 +1,4 @@
-# Mobile PDV 
+# Mobile PDV 📱💲
 - A fully functional app for sales and product/profit control
 - Version alpha (under development)
 - Android 8.0+
