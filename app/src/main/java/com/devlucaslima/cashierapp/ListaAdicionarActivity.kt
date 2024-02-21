@@ -55,8 +55,6 @@ class ListaAdicionarActivity : AppCompatActivity() {
         }
 
         //Calcular Lucro automaticamente
-        val novoPrecoString = txtAddNovoPreco.text.toString()
-
         txtAddNovoPreco.setOnFocusChangeListener { _, hasFocus ->
             if (!hasFocus) {
                 val fabrica = txtAddFabrica.text.toString().toFloat()
@@ -77,11 +75,12 @@ class ListaAdicionarActivity : AppCompatActivity() {
             val txtAddFabricaString = txtAddFabrica.text.toString()
             val txtAddNovoPrecoString = txtAddNovoPreco.text.toString()
             val txtAddLucroString = txtAddLucro.text.toString()
+            val txtAddMargem = txtAddMargem.text.toString()
             val idString = id.toString()
             id++
 
             val novoProduto = Produto("Produto: $txtAddProdutoString", "id: $idString", "Quantidade: $txtAddQuantidadeString",
-                "Preço de fábrica: $txtAddFabricaString", "Novo preço: $txtAddNovoPrecoString", "$txtAddLucroString")
+                "Preço de fábrica: R$$txtAddFabricaString", "Novo preço: R$$txtAddNovoPrecoString", "$txtAddLucroString", "$txtAddMargem")
 
             ArrayLista.listaProdutos.add(novoProduto)
             startActivity(intentListaProdutos)

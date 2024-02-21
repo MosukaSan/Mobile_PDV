@@ -16,6 +16,7 @@ class ProdutoAdapter (private val listProduto: ArrayList<Produto>):
         val txtPrecoDeFabrica = view.findViewById<TextView>(R.id.txtPrecoDeFabrica)
         val txtNovoPreco = view.findViewById<TextView>(R.id.txtNovoPreco)
         val txtLucro = view.findViewById<TextView>(R.id.txtLucro)
+        val txtMargem = view.findViewById<TextView>(R.id.txtMargem)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostagemViewHolder {
@@ -37,5 +38,6 @@ class ProdutoAdapter (private val listProduto: ArrayList<Produto>):
         holder.txtPrecoDeFabrica.text = produto.txtPrecoDeFabrica
         holder.txtNovoPreco.text = produto.txtNovoPreco
         holder.txtLucro.text = produto.txtLucro
+        holder.txtMargem.text = produto.txtMargem
     }
 }
