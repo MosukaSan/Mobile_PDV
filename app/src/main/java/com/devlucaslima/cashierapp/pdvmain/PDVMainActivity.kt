@@ -1,10 +1,11 @@
-package com.devlucaslima.cashierapp
+package com.devlucaslima.cashierapp.pdvmain
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.devlucaslima.cashierapp.R
 
 class PDVMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

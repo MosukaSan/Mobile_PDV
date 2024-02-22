@@ -1,4 +1,4 @@
-package com.devlucaslima.cashierapp
+package com.devlucaslima.cashierapp.listaprodutos
 
 class Produto (val txtNome: String,
                val txtID: String,

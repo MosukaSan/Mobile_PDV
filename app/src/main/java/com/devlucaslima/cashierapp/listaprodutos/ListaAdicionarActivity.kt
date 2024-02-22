@@ -1,4 +1,4 @@
-package com.devlucaslima.cashierapp
+package com.devlucaslima.cashierapp.listaprodutos
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
+import com.devlucaslima.cashierapp.R
+import com.devlucaslima.cashierapp.pdvmain.PDVArrayLista
+import com.devlucaslima.cashierapp.pdvmain.PDVProduto
 
 class ListaAdicionarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,7 +84,10 @@ class ListaAdicionarActivity : AppCompatActivity() {
             val novoProduto = Produto("Produto: $txtAddProdutoString", "id: $idString", "Quantidade: $txtAddQuantidadeString",
                 "Preço de fábrica: R$$txtAddFabricaString", "Novo preço: R$$txtAddNovoPrecoString", "$txtAddLucroString", "$txtAddMargem")
 
+            val pdvNovoProduto = PDVProduto("Produto: $txtAddProdutoString", "id: $idString", "Preço: R$$txtAddNovoPrecoString")
+
             ArrayLista.listaProdutos.add(novoProduto)
+            PDVArrayLista.pdvlistaProdutos.add(pdvNovoProduto)
             startActivity(intentListaProdutos)
             finish()
         }

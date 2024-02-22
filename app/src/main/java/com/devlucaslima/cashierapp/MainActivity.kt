@@ -6,13 +6,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import com.devlucaslima.cashierapp.listaprodutos.ListaProdutosActivity
+import com.devlucaslima.cashierapp.pdvmain.PDVMainActivity
+import com.devlucaslima.cashierapp.settings.GlobalSettings
+import com.devlucaslima.cashierapp.settings.SettingsActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intentPDVMain = Intent(this,PDVMainActivity::class.java)
+        val intentPDVMain = Intent(this, PDVMainActivity::class.java)
         val intentListaProdutos = Intent(this, ListaProdutosActivity::class.java)
         val intentSettings = Intent(this, SettingsActivity::class.java)
         val btnPDV = findViewById<Button>(R.id.btnPDV)
