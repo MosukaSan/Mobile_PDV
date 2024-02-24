@@ -13,16 +13,19 @@
         android:theme="@style/Theme.CashierApp"
         tools:targetApi="31">
         <activity
+            android:name=".pdvlista.PDVListaProdutos"
+            android:exported="false" />
+        <activity
             android:name=".settings.SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".pdvmain.PDVMainActivity"
             android:exported="false" />
         <activity
-            android:name=".listaprodutos.ListaProdutosActivity"
+            android:name=".listaprodutos.ListaProdutos"
             android:exported="false" />
         <activity
-            android:name=".listaprodutos.ListaAdicionarActivity"
+            android:name=".listaprodutos.ListaAdicionar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

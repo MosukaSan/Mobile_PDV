@@ -9,16 +9,16 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.devlucaslima.cashierapp.R
-import com.devlucaslima.cashierapp.pdvmain.PDVArrayLista
-import com.devlucaslima.cashierapp.pdvmain.PDVProduto
+import com.devlucaslima.cashierapp.pdvlista.PDVArrayLista
+import com.devlucaslima.cashierapp.pdvlista.PDVProduto
 
-class ListaAdicionarActivity : AppCompatActivity() {
+class ListaAdicionar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_adicionar)
 
         //Variáveis
-        val intentListaProdutos = Intent(this, ListaProdutosActivity::class.java)
+        val intentListaProdutos = Intent(this, ListaProdutos::class.java)
         val btnCalcularLucro = findViewById<Button>(R.id.btnCalcularLucro)
         val txtMargemLucro = findViewById<EditText>(R.id.txtMargemLucro)
         val txtAddMargem = findViewById<TextView>(R.id.txtAddMargem)

@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.devlucaslima.cashierapp.R
 
 class ProdutoAdapter (private val listProduto: ArrayList<Produto>):
-    RecyclerView.Adapter<ProdutoAdapter.PostagemViewHolder>(){
-    class PostagemViewHolder(view: View): RecyclerView.ViewHolder(view){
+    RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>(){
+    class ProdutoViewHolder(view: View): RecyclerView.ViewHolder(view){
 
         val txtNome = view.findViewById<TextView>(R.id.txtNome)
         val txtID = view.findViewById<TextView>(R.id.txtID)
@@ -20,17 +20,17 @@ class ProdutoAdapter (private val listProduto: ArrayList<Produto>):
         val txtMargem = view.findViewById<TextView>(R.id.txtMargem)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostagemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdutoViewHolder {
         val layoutAdapter = LayoutInflater.from(parent.context).inflate(R.layout.produto,parent, false)
 
-        return PostagemViewHolder(layoutAdapter)
+        return ProdutoViewHolder(layoutAdapter)
     }
 
     override fun getItemCount(): Int {
         return listProduto.size
     }
 
-    override fun onBindViewHolder(holder: PostagemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProdutoViewHolder, position: Int) {
         val produto = listProduto[position]
 
         holder.txtNome.text = produto.txtNome

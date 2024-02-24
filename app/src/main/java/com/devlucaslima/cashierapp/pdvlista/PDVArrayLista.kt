@@ -1,6 +1,4 @@
-package com.devlucaslima.cashierapp.pdvmain
-
-import com.devlucaslima.cashierapp.listaprodutos.Produto
+package com.devlucaslima.cashierapp.pdvlista
 
 class PDVArrayLista {
     companion object {

@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.devlucaslima.cashierapp.R
 
-class ListaProdutosActivity : AppCompatActivity() {
+class ListaProdutos : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_produtos)
 
 
-        val intentListaAdiconarActivity = Intent(this, ListaAdicionarActivity::class.java)
+        val intentListaAdiconarActivity = Intent(this, ListaAdicionar::class.java)
         val btnVoltar = findViewById<Button>(R.id.btnVoltarLista)
         val btnAdicionarProdutoLista = findViewById<Button>(R.id.btnAdicionarProdutoLista)
 
