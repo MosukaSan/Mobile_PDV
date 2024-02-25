@@ -23,18 +23,18 @@
 
     <EditText
         android:id="@+id/txtMudarTituIo"
-        android:layout_width="369dp"
+        android:layout_width="wrap_content"
         android:layout_height="54dp"
         android:ems="10"
+        android:hint="TITULO"
         android:inputType="text"
-        android:text="Cashier App"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.096" />
 
     <Button
         android:id="@+id/btnVoltarSettings"

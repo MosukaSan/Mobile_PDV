@@ -12,6 +12,7 @@ import com.devlucaslima.cashierapp.pdvmain.PDVMainArrayLista
 import com.devlucaslima.cashierapp.pdvmain.PDVMainProduto
 
 class PDVListaProdutos : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.pdv_adicionar)

@@ -1,5 +1,6 @@
 package com.devlucaslima.cashierapp.listaprodutos
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -11,8 +12,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.devlucaslima.cashierapp.R
 import com.devlucaslima.cashierapp.pdvlista.PDVArrayLista
 import com.devlucaslima.cashierapp.pdvlista.PDVProduto
+import com.devlucaslima.cashierapp.pdvlista.PDVSalvar
 
 class ListaAdicionar : AppCompatActivity() {
+
+    fun salvarListaProdutos(context: Context) {
+        val listaProdutos = ArrayLista.listaProdutos // Obtenha a lista de produtos da classe ArrayLista
+        Salvar.salvarLista(context, listaProdutos) // Salve a lista de produtos usando a classe ArrayLista
+    }
+
+    fun pdvSalvarListaProdutos(context: Context) {
+        val listaProdutos = PDVArrayLista.pdvlistaProdutos // Obtenha a lista de produtos da classe ArrayLista
+        PDVSalvar.salvarLista(context, listaProdutos) // Salve a lista de produtos usando a classe ArrayLista
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lista_adicionar)
@@ -88,8 +100,11 @@ class ListaAdicionar : AppCompatActivity() {
 
             ArrayLista.listaProdutos.add(novoProduto)
             PDVArrayLista.pdvlistaProdutos.add(pdvNovoProduto)
+            salvarListaProdutos(this)
+            pdvSalvarListaProdutos(this)
             startActivity(intentListaProdutos)
             finish()
+
         }
     }
 }

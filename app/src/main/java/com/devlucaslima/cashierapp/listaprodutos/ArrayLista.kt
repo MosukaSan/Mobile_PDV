@@ -5,6 +5,6 @@ import com.devlucaslima.cashierapp.pdvlista.PDVProduto
 
 class ArrayLista {
     companion object {
-        val listaProdutos = ArrayList<Produto>()
+        var listaProdutos = ArrayList<Produto>()
     }
 }

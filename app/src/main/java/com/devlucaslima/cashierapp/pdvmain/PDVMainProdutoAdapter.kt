@@ -1,5 +1,6 @@
 package com.devlucaslima.cashierapp.pdvmain
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.devlucaslima.cashierapp.R
+import com.devlucaslima.cashierapp.listaprodutos.ArrayLista
+
 class PDVMainProdutoAdapter (private val listProduto: ArrayList<PDVMainProduto>):
     RecyclerView.Adapter<PDVMainProdutoAdapter.PDVMainProdutoViewHolder>(){
 
@@ -21,8 +24,36 @@ class PDVMainProdutoAdapter (private val listProduto: ArrayList<PDVMainProduto>)
             btnPdvMainRemover.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
+                    // Pegar o produto da lista na posição especificada
+                    val produtoRemovido = listProduto[position]
+
+                    // Extrair o preço do produto removido
+                    val precoString = produtoRemovido.txtPdvMainPreco.replace(Regex("[^\\d.]"), "")
+                    val precoRemovido = precoString.toDoubleOrNull() ?: 0.0
+
+                    val quantidadeString = produtoRemovido.txtPdvMainQuantidade.replace(Regex("[^\\d.]"), "")
+                    val quantidade = quantidadeString.toDoubleOrNull() ?: 0.0
+
+                    PDVMainActivity.saveValue = PDVMainActivity.saveValue - precoRemovido*quantidade
+
+                    // Remover o produto da lista
                     listProduto.removeAt(position)
                     notifyItemRemoved(position)
+
+                    val context = itemView.context
+
+                    val listaPrincipalQuantidade = ArrayLista.listaProdutos[position]
+                    val quantidadeStringPrincipal = listaPrincipalQuantidade.txtQuantidade.replace(Regex("[^\\d.]"), "")
+                    val quantidadePrincipal = quantidadeStringPrincipal.toInt() + quantidade.toInt()
+                    listaPrincipalQuantidade.txtQuantidade = "Quantidade: $quantidadePrincipal"
+
+                    // Crie um Intent para iniciar a nova atividade
+                    val intent = Intent(context, PDVMainActivity::class.java)
+
+                    // Finalize a atividade atual, se necessário
+                    (context as? PDVMainActivity)?.finish()
+                    // Inicie a nova atividade
+                    context.startActivity(intent)
                 }
             }
         }
