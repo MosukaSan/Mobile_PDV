@@ -1,13 +1,10 @@
 package com.devlucaslima.cashierapp.listaprodutos
 
 import com.devlucaslima.cashierapp.listaprodutos.Produto
+import com.devlucaslima.cashierapp.pdvlista.PDVProduto
 
 class ArrayLista {
     companion object {
-        val listaProdutos = arrayListOf(
-            Produto("Produto: Exemplo", "id: 0", "Quantidade: 5",
-                "Preço de fábrica: R$1.00", "Novo preço: R$2.00",
-                "Lucro: R$1.00", "Margem: 100%")
-        )
+        val listaProdutos = ArrayList<Produto>()
     }
 }

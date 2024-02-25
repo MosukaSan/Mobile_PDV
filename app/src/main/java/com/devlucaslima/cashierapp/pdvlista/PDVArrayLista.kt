@@ -1,9 +1,9 @@
 package com.devlucaslima.cashierapp.pdvlista
 
+import com.devlucaslima.cashierapp.pdvmain.PDVMainProduto
+
 class PDVArrayLista {
     companion object {
-        val pdvlistaProdutos = arrayListOf(
-            PDVProduto("Nome: Exemplo", "id: 0", "Preço: R$0.00")
-        )
+        val pdvlistaProdutos = ArrayList<PDVProduto>()
     }
 }

@@ -1,12 +1,16 @@
 package com.devlucaslima.cashierapp.pdvlista
 
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.devlucaslima.cashierapp.R
+import com.devlucaslima.cashierapp.pdvmain.PDVMainActivity
 
 
 class PDVProdutoAdapter (private val listProduto: ArrayList<PDVProduto>):
@@ -30,6 +34,7 @@ class PDVProdutoAdapter (private val listProduto: ArrayList<PDVProduto>):
         val txtPdvID = view.findViewById<TextView>(R.id.txtPdvID)
         val txtPdvPreco = view.findViewById<TextView>(R.id.txtPdvPreco)
         val btnPdvAdd = view.findViewById<Button>(R.id.btnPdvAdd)
+        val txtPdvQuantidade = view.findViewById<EditText>(R.id.txtPdvQuantidade)
 
         init {
             // Adiciona o OnClickListener ao botão
@@ -39,6 +44,33 @@ class PDVProdutoAdapter (private val listProduto: ArrayList<PDVProduto>):
                     listener?.onItemClick(listProduto[position])
                 }
             }
+            txtPdvQuantidade.addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                    // Não é necessário implementar este método
+                }
+
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    // Não é necessário implementar este método
+                }
+
+                override fun afterTextChanged(s: Editable?) {
+                    val position = adapterPosition
+                    if (position != RecyclerView.NO_POSITION) {
+                        // Obter a quantidade digitada pelo usuário como uma string
+                        val quantidadeStr = s.toString()
+
+                        // Converter a quantidade para um valor numérico
+                        val quantidade: Int = try {
+                            quantidadeStr.toInt()
+                        } catch (e: NumberFormatException) {
+                            // Caso a entrada do usuário não seja um número válido
+                            1 // Defina um valor padrão ou trate o erro conforme necessário
+                        }
+                        PDVMainActivity.quantity = PDVMainActivity.quantity + quantidade
+                        PDVListaProdutos.txtPdvQuantidade = quantidadeStr
+                    }
+                }
+            })
         }
     }
 

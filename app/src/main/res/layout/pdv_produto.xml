@@ -29,6 +29,15 @@
             android:text="TextView"
             android:textColor="#000000" />
 
+        <EditText
+            android:id="@+id/txtPdvQuantidade"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:ems="10"
+            android:hint="Quantidade"
+            android:inputType="text"
+            android:textSize="13sp" />
+
         <Button
             android:id="@+id/btnPdvAdd"
             android:layout_width="126dp"
