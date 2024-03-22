@@ -143,34 +143,4 @@ class PDVMainActivity : AppCompatActivity() {
             }
         }
     }
-    override fun onBackPressed() {
-        var txtTotalPago = findViewById<EditText>(R.id.txtTotalPago)
-
-        txtTotalPago.setOnFocusChangeListener { _, hasFocus ->
-            txtTotalPago.clearFocus()
-        }
-
-        if (isTecladoVisivel()) {
-            // Se o teclado estiver visível, apenas oculte a visão associada ao teclado
-            ocultarTeclado()
-        } else {
-            // Se o teclado não estiver visível, permita o comportamento padrão de retorno
-            super.onBackPressed()
-        }
-    }
-
-    private fun isTecladoVisivel(): Boolean {
-        // Verifique se o teclado está visível
-        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        return inputMethodManager.isAcceptingText
-    }
-
-    private fun ocultarTeclado() {
-        // Oculte o teclado
-        val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-        val currentFocusView = currentFocus
-        if (currentFocusView != null) {
-            inputMethodManager.hideSoftInputFromWindow(currentFocusView.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
-        }
-    }
 }

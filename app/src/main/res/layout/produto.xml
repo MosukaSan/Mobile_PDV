@@ -65,6 +65,24 @@
             android:text="TextView"
             android:textColor="#000000" />
 
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="130dp"
+            android:layout_height="31dp"
+            android:backgroundTint="#2CA0F8"
+            android:text="Editar"
+            android:textAlignment="center"
+            android:textSize="9sp" />
+
+        <Button
+            android:id="@+id/btnListaRemover"
+            android:layout_width="130dp"
+            android:layout_height="31dp"
+            android:backgroundTint="#FF4141"
+            android:text="Remover"
+            android:textAlignment="center"
+            android:textSize="9sp" />
+
         <TextView
             android:id="@+id/textView35"
             android:layout_width="match_parent"
